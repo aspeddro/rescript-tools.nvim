@@ -1,0 +1,90 @@
+*rescript-tools.nvim* A plugin to improve your ReScript experience in Neovim.
+
+Author: Pedro Castro
+Homepage: <https://github.com/aspeddro/rescript.nvim>
+License: MIT
+
+================================================================================
+                                                                *rescript-tools*
+
+This plugin provides features some features that are available in vscode
+plugin, such as:
+
+1. Create Interface file `.resi`
+2. Open Compiled JavaScript file
+3. Switch between implementation and interface file
+
+================================================================================
+
+M.create_interface({open?})                    *rescript-tools.create_interface*
+    Create Interface file
+
+    Parameters: ~
+        {open?}  (boolean)  Open interface file after create. Default is `false`
+
+    Usage: ~
+        >
+             require('rescript-tools').create_interface()
+             -- Open file after create
+             require('rescript-tools').create_interface(true)
+        <
+
+
+M.open_compiled()                                 *rescript-tools.open_compiled*
+    Open Compiled JavaScript
+
+    Usage: ~
+        >
+             require('rescript-tools').open_compiled()
+        <
+
+
+M.switch_impl_intf({ask?})                     *rescript-tools.switch_impl_intf*
+    Switch between implementation and interface file
+
+    Parameters: ~
+        {ask?}  (boolean)  Ask to create interface file if not exists. Default is `false`
+
+    Usage: ~
+        >
+             require('rescript-tools').switch_impl_intf()
+             -- Ask to create interface file if not exists
+             require('rescript-tools').switch_impl_intf(true)
+        <
+
+
+M.on_attach({client}, {bufnr}, {opts?})               *rescript-tools.on_attach*
+    This function can be used to create command when LSP is attached to buffer.
+
+    Parameters: ~
+        {client}  (table)                                          LSP client
+        {bufnr}   (number)                                         buffer number
+        {opts?}   ({enable:boolean,names:table<string,function>})
+
+    Usage: ~
+        >
+             -- Default options
+             require('rescript-tools').on_attach(client, bufnr, {
+               commands = {
+                 enable = true,
+                 names = {
+                   ResOpenCompiled = rescript('rescript-tools').open_compiled
+                   ResCreateInterface = rescript('rescript-tools').create_interface
+                   ResSwitchImplInt = rescript('rescript-tools').switch_impl_intf
+                 }
+               }
+             })
+             -- Overriding the command name
+             require('rescript-tools').on_attach(client, bufnr, {
+               commands = {
+                 names = {
+                   ResOpenJS = rescript('rescript-tools').open_compiled
+                   ResCreateInt = rescript('rescript-tools').create_interface
+                   ResSwitch = rescript('rescript-tools').switch_impl_intf
+                 }
+               }
+             })
+        <
+
+
+vim:tw=78:ts=8:noet:ft=help:norl:
