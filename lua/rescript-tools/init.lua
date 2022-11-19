@@ -86,11 +86,10 @@ M.create_interface = function(open)
     client.request(
       METHODS.createInterface,
       vim.lsp.util.make_text_document_params(bufnr),
-      function(_, result, ctx)
+      function(_, result, _)
         if result then
-          local interface_file = vim.uri_to_fname(ctx.params.uri) .. "i"
           if open then
-            open_file(interface_file)
+            open_file(vim.uri_to_fname(result.uri))
           end
         end
       end,
