@@ -4,7 +4,7 @@ local M = {}
 ---*rescript-tools.nvim* A plugin to improve your ReScript experience in Neovim.
 ---
 ---Author: Pedro Castro
----Homepage: <https://github.com/aspeddro/rescript=tools.nvim>
+---Homepage: <https://github.com/aspeddro/rescript-tools.nvim>
 ---License: MIT
 ---@brief ]]
 
