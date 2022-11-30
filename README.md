@@ -5,7 +5,7 @@ A plugin to improve your ReScript experience in Neovim.
 ## Requirements
 
 - Neovim >= 0.8
-- [rescript-vscode](https://github.com/rescript-lang/rescript-vscode) >= 1.8.3
+- [ReScript LSP](https://github.com/rescript-lang/rescript-vscode) >= 1.8.3
 
 ## Install
 
@@ -17,7 +17,7 @@ use 'aspeddro/rescript-tools.nvim'
 
 ## Recommendations
 
-The rescript-vscode plugin contains a language server than can be power other editors. I recommend using [mason.nvim](https://github.com/williamboman/mason.nvim) to install the language server. It will download the `vsix` file from the latest release and add it to the Neovim `PATH` as `rescript-lsp`.
+The [rescript-vscode](https://github.com/rescript-lang/rescript-vscode) plugin contains a language server than can be power other editors. I recommend using [mason.nvim](https://github.com/williamboman/mason.nvim) to install the language server. It will download the `vsix` file from the latest stable release and add it to the Neovim `PATH` as `rescript-lsp`.
 
 ## Setup
 
