@@ -5,7 +5,7 @@ A plugin to improve your ReScript experience in Neovim.
 ## Requirements
 
 - Neovim >= 0.8
-- [ReScript LSP](https://github.com/rescript-lang/rescript-vscode) >= 1.8.3
+- [ReScript LSP](https://github.com/rescript-lang/rescript-vscode) >= 1.10.0
 
 ## Install
 
