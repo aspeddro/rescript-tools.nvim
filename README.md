@@ -37,20 +37,6 @@ require'lspconfig'.rescriptls.setup{
   --   '/home/username/path/to/server/out/server.js',
   --   '--stdio'
   -- }
-  init_options = {
-    extensionConfiguration = {
-      binaryPath = nil,
-      platformPath = nil,
-      askToStartBuild = false,
-      codeLens = true,
-      signatureHelp = {
-        enable = true,
-      },
-      inlayHints = {
-        enable = false,
-      },
-    },
-  },
   on_attach = on_attach
 }
 ```
