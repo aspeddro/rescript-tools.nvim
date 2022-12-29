@@ -36,7 +36,7 @@ end
 ---@return table|nil
 local get_client = function()
   local active_client = vim.lsp.get_active_clients({ name = "rescriptls" })
-  return #active_client > 0 and active_client[1] or nil
+  return not vim.tbl_isempty(active_client) and active_client[1] or nil
 end
 
 ---Open file
