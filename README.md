@@ -19,14 +19,9 @@ use 'aspeddro/rescript-tools.nvim'
 
 The [rescript-vscode](https://github.com/rescript-lang/rescript-vscode) plugin contains a language server than can be power other editors. I recommend using [mason.nvim](https://github.com/williamboman/mason.nvim) to install the language server. It will download the `vsix` file from the latest stable release and add it to the Neovim `PATH` as `rescript-lsp`.
 
-## Setup
+## Usage
 
 ```lua
-local on_attach = function(client, bufnr)
-  -- on_attach function will create buffer commands when LSP is attached
-  require('rescript-tools').on_attach(client, bufnr)
-end
-
 --Setup rescript LSP
 require'lspconfig'.rescriptls.setup{
   -- Using mason.nvim plugin
@@ -37,7 +32,21 @@ require'lspconfig'.rescriptls.setup{
   --   '/home/username/path/to/server/out/server.js',
   --   '--stdio'
   -- }
-  on_attach = on_attach
+  on_attach = on_attach,
+  commands = {
+    ResOpenCompiled = {
+      require('rescript-tools').open_compiled,
+      description = 'Open Compiled JS',
+    },
+    ResCreateInterface = {
+      require('rescript-tools').create_interface,
+      description = 'Create Interface file',
+    },
+    ResSwitchImplInt = {
+      require('rescript-tools').switch_impl_intf,
+      description = 'Switch Implementation/Interface',
+    },
+  },
 }
 ```
 
