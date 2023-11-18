@@ -40,7 +40,3 @@ require'lspconfig'.rescriptls.setup{
 ```
 
 Mode details see `help rescript-tools`
-
-## Using pre-releases channel
-
-<!-- TODO -->
